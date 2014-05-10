@@ -1,81 +1,199 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Ghosttile-homepage by kernelpanic-im</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Ghosttile-homepage</h1>
-        <p></p>
+<title>Ghostile</title>
 
-        <p class="view"><a href="https://github.com/kernelpanic-im/ghosttile-homepage">View the Project on GitHub <small>kernelpanic-im/ghosttile-homepage</small></a></p>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
 
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+<link href="http://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css" />
+<style type="text/css">
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 
-        <ul>
-          <li><a href="https://github.com/kernelpanic-im/ghosttile-homepage/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/kernelpanic-im/ghosttile-homepage/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/kernelpanic-im/ghosttile-homepage">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+	-webkit-text-size-adjust: none;
+}
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+html,body{
+	margin: 0;
+	padding: 0;
+	border: none;
+	line-height: 1;
+	min-height:100%;
+	height: 100%;
+}
+body{
+	font-size: 14px;
+	font-family: 'Arimo',Arial,Helvetica,sans-serif;
+}
+figure{
+	display: block;
+}
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+ul,ol,figure,form{
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: 0;
+	vertical-align: middle;
+}
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+.fa{
+	display: inline-block;
+	width: 1em;
+	text-align: center;
+}
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+.fa:before,
+.fa:before {
+  width: 1em;
+  text-align: center;
+}
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+.row{
+	position: relative;
+}
+.container{
+	position: relative;
+	width: 80%;
+	min-width: 800px;
+	max-width: 1000px;
+	margin: auto;
+}
+.container-full{
+	width: 100%;
+}
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+#header{
+	background: #000 url(assets/img/black-wood.jpg) no-repeat center fixed;
+	background-size: cover;
+	
+	color: rgba(255,255,255,.8);
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+#header .container{
+	width: 800px;
+	padding: 50px 0;
+}
+#header .container:after{
+	content:"";
+	display: block;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+#header header{
+	text-align: center;
+}
+#header .logo{/*
+	position: absolute;
+	left: 0;*/
+}
+#header h1{
+	margin: 30px 0;
+	font-size: 50px;
+	letter-spacing: 10px;
+}
+#header h2{
+	margin: 30px 0;
+	font-weight: normal;
+}
+#header .side,
+#header .main{
+	float: left;
+	width: 50%;
+}
+#header .side{
+	height: 250px;
+}
+#header .main{
+	padding: 0 30px;
+}
+#header .downloads{
+	margin: 0;
+}
+#header .downloads a{
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 5px;
+	background: #8bbd1d;
+	background: -webkit-linear-gradient(#96cd21, #7ead18); /* For Safari 5.1 to 6.0 */
+	background: -moz-linear-gradient(#96cd21, #7ead18); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#96cd21, #7ead18); /* Standard syntax */
+	box-shadow: 0 1px 1px rgba(0,0,0,.3);
+	font-size: 24px;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+#header .downloads small{
+	margin-left: 1em;
+	font-size: 16px;
+}
+#header .main ul{
+	margin: 0;
+}
+#header .main li{
+	list-style: inside;
+	line-height: 2em;
+}
+</style>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+</head>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<body>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<div class="row" id="header">
+	<div class="container">
+		<header>
+			<img src="assets/img/logo.png" class="logo" />
+			<h1>Ghostile</h1>
+			<h2>Write your description of the App</h2>
+		</header>
+		<div class="side">
+			<iframe width="100%" height="100%" src="http://www.youtube.com/embed/89c8dq8boWw?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen=""></iframe>
+		</div>
+		<div class="main">
+			<ul>
+				<li>Dock is too full?</li>
+				<li>Don’t like some Apps’ icon?</li>
+				<li>Don’t want to see some apps when press ⌘+Tab?</li>
+			</ul>
+			<h3>Just try Ghostile!</h3>
+			<p class="downloads"><a href="#">Download</a><small>v 1.0</small></p>
+		</div>
+	</div>
+</div>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<div class="row" id="products">
+	<div class="container">
+	</div>
+</div>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/kernelpanic-im">kernelpanic-im</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-48259199-2");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+<div class="row" id="changelog">
+	<div class="container">
+	</div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  </body>
+  ga('create', 'UA-48259199-2', 'kernelpanic.im');
+  ga('send', 'pageview');
+
+</script>
+</body>
 </html>
