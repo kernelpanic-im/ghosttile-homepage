@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 
-<title>Ghostile</title>
+<title>Ghosttile</title>
 
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -37,7 +37,7 @@ figure{
 	display: block;
 }
 
-ul,ol,figure,form{
+figure,form{
 	margin: 0;
 	padding: 0;
 }
@@ -154,10 +154,64 @@ img{
 }
 #header .main ul{
 	margin: 0;
+	padding: 0;
 }
 #header .main li{
 	list-style: inside;
 	line-height: 2em;
+}
+
+#product{
+	height: 100%;
+	overflow: visible;
+	background: url(assets/img/city-lights-1280.jpg) no-repeat center fixed;
+	background-size: cover;
+	box-shadow: inset 0 0 20px rgba(0,0,0,.3);
+	color: rgba(255,255,255,.8);
+}
+#product .container{
+	padding: 3em 0;
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	height: 100%;
+}
+#product section{
+	width: 50%;
+	height: 100%;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+}
+#product .video{
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	box-align: center;
+	height: 100%;
+}
+#product h2{
+	font-size: 2em;
+}
+#product p{
+	margin: 0;
+}
+#product li{
+	line-height: 1.5em;
+	/*font-size: 1.1rem;*/
+}
+#product .issues{
+	color: rgba(255,255,255,.5);
+}
+
+#footer .container{
+	padding: 1em;
+	text-align: center;
+}
+#footer a{
+	color: #000;
 }
 </style>
 
@@ -169,11 +223,13 @@ img{
 	<div class="container">
 		<header>
 			<img src="assets/img/logo.png" class="logo" />
-			<h1>Ghostile</h1>
+			<h1>Ghosttile</h1>
 			<h2>Hide your running applications from Dock like a charm</h2>
 		</header>
 		<div class="side">
-			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/oZ6iX83i32E?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen=""></iframe>
+			<figure>
+				<img src="" alt="这里放一张电脑屏幕的截图之类" />
+			</figure>
 		</div>
 		<div class="main">
 			<ul>
@@ -181,7 +237,7 @@ img{
 				<li>Don’t like some Apps’ icon?</li>
 				<li>Don’t want to see some apps when press ⌘+Tab?</li>
 			</ul>
-			<h3>Just try Ghostile!</h3>
+			<h3>Just try Ghosttile!</h3>
 			<p>
 				<a class="button-big green" href="https://github.com/kernelpanic-im/ghosttile-homepage/releases/download/1.0.6_5/GhostTile.1.0.6_5.zip">Download</a>
 				<a class="button-big blue buynow" href="http://sites.fastspring.com/kernelpanic/product/ghosttile">Buy Now</a>
@@ -189,15 +245,61 @@ img{
 		</div>
 	</div>
 </div>
-<div class="row" id="products">
+<div class="row" id="product">
+	<div class="container">
+		<section class="video">
+			<iframe width="450" height="300" src="https://www.youtube.com/embed/oZ6iX83i32E?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen=""></iframe>
+		</section>
+		<section class="description">
+			<h2>Features</h2>
+			<ul>
+				<li>
+					<p>Hide running applications from Dock, Multiple ways:</p>
+					<ul>
+						<li>Drag &amp; Drop</li>
+						<li>Select from /Applicaton folder</li>
+						<li>Click icon on Dock</li>
+					</ul>
+				</li>
+				<li>Per app config to hide or add menubar item</li>
+				<li>Notification for added Apps' Dock activities</li>
+				<li>
+					<p>Multiple ways to quick switch back</p>
+					<ul>
+						<li>Click on menubar</li>
+						<li>Call out Quick Switch window</li>
+						<li>Alias folder on Dock</li>
+					</ul>
+				</li>
+				<li>Keyboard Shortcut support</li>
+				<li>Alfred v2 Workflow support</li>
+				<li>Easy installation</li>
+				<li>Support sandboxed application, no on-disk modification</li>
+			</ul>
+			<hr />
+			<div class="issues">
+				<h2>Known Issues</h2>
+				<ul>
+					<li>Not support GC enabled application(e.g. Mou)</li>
+					<li>Compatibility issues with Alfred v2 toggle visibility</li>
+					<li>Startup at login timing issue, some app need to re-add. (e.g. Spotify)</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</div>
+
+<div class="row" id="issues">
 	<div class="container">
 	</div>
 </div>
 
-<div class="row" id="changelog">
+<div class="row" id="footer">
 	<div class="container">
+		<p>&copy; Copyright since 2014. All right reserved. Site designed by <a href="http://yanjunyi.com/">mytharcher</a></p>
 	</div>
 </div>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
