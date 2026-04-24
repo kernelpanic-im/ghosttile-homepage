@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
+<meta name="description" content="GhostTile — hide running applications from your Dock." />
 
 <title>GhostTile</title>
 
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
-<link href="http://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css" />
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css" />
 <style type="text/css">
 *{
 	-webkit-box-sizing: border-box;
@@ -44,6 +44,8 @@ figure,form{
 img{
 	border: 0;
 	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
 }
 
 .fa{
@@ -63,25 +65,51 @@ img{
 }
 .container{
 	position: relative;
-	width: 80%;
-	min-width: 800px;
+	width: 100%;
 	max-width: 1000px;
 	margin: auto;
+	padding: 0 20px;
 }
 .container-full{
 	width: 100%;
 }
 
+#update-banner{
+	background: linear-gradient(90deg, #6a3dff, #8b5cf6);
+	color: #fff;
+	text-align: center;
+	padding: 12px 20px;
+	font-size: 14px;
+	line-height: 1.4;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+#update-banner a{
+	color: #fff;
+	font-weight: bold;
+	text-decoration: underline;
+}
+#update-banner .new-tag{
+	display: inline-block;
+	background: rgba(255,255,255,.2);
+	padding: 2px 8px;
+	border-radius: 4px;
+	margin-right: 8px;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
 #header{
 	background: #000 url(assets/img/black-wood.jpg) no-repeat center fixed;
 	background-size: cover;
-	
+
 	color: rgba(255,255,255,.8);
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
 }
 #header .container{
-	width: 800px;
-	padding: 60px 0;
+	padding: 60px 20px;
 }
 #header .container:after{
 	content:"";
@@ -94,10 +122,6 @@ img{
 #header header{
 	text-align: center;
 }
-#header .logo{/*
-	position: absolute;
-	left: 0;*/
-}
 #header h1{
 	margin: 30px 0;
 	font-size: 50px;
@@ -106,6 +130,8 @@ img{
 #header h2{
 	margin: 30px 0;
 	font-weight: normal;
+	font-size: 22px;
+	line-height: 1.3;
 }
 #header .side,
 #header .main{
@@ -113,7 +139,7 @@ img{
 	width: 50%;
 }
 #header .side{
-	height: 250px;
+	text-align: center;
 }
 #header .main{
 	padding: 0 30px;
@@ -131,19 +157,20 @@ img{
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
+	margin-bottom: 10px;
 }
 #header .green{
 	background: #8bbd1d;
-    background: -webkit-linear-gradient(#96cd21, #7ead18); /* For Safari 5.1 to 6.0 */
-    background: -moz-linear-gradient(#96cd21, #7ead18); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#96cd21, #7ead18); /* Standard syntax */
+    background: -webkit-linear-gradient(#96cd21, #7ead18);
+    background: -moz-linear-gradient(#96cd21, #7ead18);
+    background: linear-gradient(#96cd21, #7ead18);
 }
 
 #header .blue{
 	background: #395D99;
-	background: -webkit-linear-gradient(#335799, #0f2b55); /* For Safari 5.1 to 6.0 */
-	background: -moz-linear-gradient(#335799, #0f2b55); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#335799, #0f2b55); /* Standard syntax */
+	background: -webkit-linear-gradient(#335799, #0f2b55);
+	background: -moz-linear-gradient(#335799, #0f2b55);
+	background: linear-gradient(#335799, #0f2b55);
 }
 #header .downloads small{
 	margin-left: 1em;
@@ -162,7 +189,6 @@ img{
 }
 
 #product{
-	height: 100%;
 	overflow: visible;
 	background: url(assets/img/city-lights-1280.jpg) no-repeat center fixed;
 	background-size: cover;
@@ -170,51 +196,103 @@ img{
 	color: rgba(255,255,255,.8);
 }
 #product .container{
-	padding: 3em 0;
-	display: -webkit-box;
-	display: -moz-box;
-	display: box;
-	height: 100%;
+	padding: 3em 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 30px;
 }
 #product section{
-	width: 50%;
-	height: 100%;
-	-webkit-box-flex: 1;
-	-moz-box-flex: 1;
-	box-flex: 1;
+	flex: 1 1 45%;
+	min-width: 0;
 }
 #product .video{
-	display: -webkit-box;
-	display: -moz-box;
-	display: box;
-	-webkit-box-align: center;
-	-moz-box-align: center;
-	box-align: center;
-	height: 100%;
+	flex: 1 1 45%;
+	align-self: flex-start;
+}
+#product .video iframe{
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border: 0;
+	display: block;
 }
 #product h2{
 	font-size: 2em;
+	margin-top: 0;
 }
 #product p{
 	margin: 0;
 }
 #product li{
 	line-height: 1.5em;
-	/*font-size: 1.1rem;*/
 }
 #product .issues{
 	color: rgba(255,255,255,.5);
 }
-#ghosttile-main {
-	padding-left: 30px;
-}
 
 #footer .container{
-	padding: 1em;
+	padding: 1em 20px;
 	text-align: center;
 }
 #footer a{
 	color: #000;
+}
+
+@media (max-width: 768px){
+	#update-banner{
+		font-size: 13px;
+		padding: 10px 16px;
+	}
+	#update-banner .new-tag{
+		display: block;
+		margin: 0 0 4px 0;
+	}
+	#header .container{
+		padding: 40px 20px;
+	}
+	#header h1{
+		font-size: 36px;
+		letter-spacing: 6px;
+		margin: 20px 0;
+	}
+	#header h2{
+		font-size: 18px;
+		margin: 20px 0;
+	}
+	#header .side,
+	#header .main{
+		float: none;
+		width: 100%;
+	}
+	#header .side{
+		margin-bottom: 24px;
+	}
+	#header .main{
+		padding: 0;
+	}
+	#header .button-big{
+		width: 100%;
+		max-width: 300px;
+		margin: 8px auto;
+		display: block;
+	}
+	#header .buynow{
+		margin-left: auto;
+	}
+	#product .container{
+		flex-direction: column;
+		padding: 2em 20px;
+	}
+	#product .video{
+		width: 100%;
+		flex: 1 1 100%;
+	}
+	#product section{
+		flex: 1 1 100%;
+	}
+	#product h2{
+		font-size: 1.6em;
+	}
 }
 </style>
 
@@ -222,28 +300,34 @@ img{
 
 <body>
 
+<div id="update-banner">
+	<span class="new-tag">NEW</span>
+	GhostTile 2.0 is here — a full Swift rewrite for modern macOS.
+	<a href="https://ghosttile.hewig.dev/">Check it out &rarr;</a>
+</div>
+
 <div class="row" id="header">
 	<div class="container">
 		<header>
-			<img src="assets/img/logo.png" class="logo" />
+			<img src="assets/img/logo.png" class="logo" alt="GhostTile logo" />
 			<h1>GhostTile</h1>
 			<h2>Hide your running applications from Dock like a charm.</h2>
 		</header>
 		<div class="side">
 			<figure>
-				<img id="ghosttile-main" width="350px" height="219px" src="assets/img/ghosttile-main.png" alt="GhostTile Main Window" />
+				<img id="ghosttile-main" src="assets/img/ghosttile-main.png" alt="GhostTile Main Window" />
 			</figure>
 		</div>
 		<div class="main">
 			<ul>
 				<li>Dock is too full?</li>
-				<li>Don’t like some Apps’ icon?</li>
-				<li>Don’t want to see some apps when press ⌘+Tab?</li>
+				<li>Don't like some Apps' icon?</li>
+				<li>Don't want to see some apps when press ⌘+Tab?</li>
 			</ul>
 			<h3>Just try GhostTile!</h3>
 			<p>
-				<a class="button-big green" href="https://dl.devmate.com/im.kernelpanic.GhostTile/GhostTile.zip">Download</a>
-				<a class="button-big blue buynow" href="http://sites.fastspring.com/kernelpanic/product/ghosttile">Buy Now</a>
+				<a class="button-big green" href="https://ghosttile.hewig.dev/">Download 2.0</a>
+				<a class="button-big blue buynow" href="https://ghosttile.hewig.dev/">Learn More</a>
 			</p>
 		</div>
 	</div>
@@ -251,7 +335,7 @@ img{
 <div class="row" id="product">
 	<div class="container">
 		<section class="video">
-			<iframe width="450" height="300" src="https://www.youtube.com/embed/oZ6iX83i32E?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen=""></iframe>
+			<iframe src="https://www.youtube.com/embed/oZ6iX83i32E?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen=""></iframe>
 		</section>
 		<section class="description">
 			<h2>Features</h2>
@@ -295,42 +379,11 @@ img{
 	</div>
 </div>
 
-<div class="row" id="issues">
-	<div class="container">
-	</div>
-</div>
-
 <div class="row" id="footer">
 	<div class="container">
 		<p>Copyright &copy; 2017 <a href="mailto:ghosttile@kernelpanic.im">kernelpanic.im</a>. All rights reserved. Site designed by <a href="http://yanjunyi.com/">mytharcher</a></p>
 	</div>
 </div>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-48259199-2', 'kernelpanic.im');
-  ga('send', 'pageview');
-
-</script>
-<!-- DevMate Traffic Tracking script -->
-<script type="text/javascript">
-	/* DO NOT MODIFY */
-	var _dmq = _dmq || [];
-	_dmq.push( ['_setAccount', 'DM-0000144'] );
-	/* END "DO NOT MODIFY" */
-
-	_dmq.push( ['_setUseGoogle', true] );
-    _dmq.push( ['_trackProducts', '0002'] );
-
-	(function() {
-	var dmt = document.createElement('script'); dmt.type = 'text/javascript'; dmt.async = true;
-	dmt.src = window.location.protocol + '//cdn.devmate.com/track/dm.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(dmt, s);
-	})();
-</script>
 </body>
 </html>
