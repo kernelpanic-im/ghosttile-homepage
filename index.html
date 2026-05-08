@@ -149,28 +149,37 @@ img{
 }
 #header .button-big{
 	display: inline-block;
-	width: 150px;
-	height: 50px;
-	line-height: 50px;
-	border-radius: 5px;
-	font-size: 24px;
+	padding: 0 24px;
+	height: 48px;
+	line-height: 48px;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 0.3px;
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
 	margin-bottom: 10px;
+	transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+	box-shadow: 0 2px 6px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18);
+}
+#header .button-big:hover{
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.22);
+	filter: brightness(1.05);
+}
+#header .button-big:active{
+	transform: translateY(0);
+	filter: brightness(.95);
 }
 #header .green{
-	background: #8bbd1d;
-    background: -webkit-linear-gradient(#96cd21, #7ead18);
-    background: -moz-linear-gradient(#96cd21, #7ead18);
-    background: linear-gradient(#96cd21, #7ead18);
+	background: #6fa81a;
+	background: linear-gradient(#8ac523, #6fa81a);
 }
 
 #header .blue{
-	background: #395D99;
-	background: -webkit-linear-gradient(#335799, #0f2b55);
-	background: -moz-linear-gradient(#335799, #0f2b55);
-	background: linear-gradient(#335799, #0f2b55);
+	background: #2d5290;
+	background: linear-gradient(#3a6bb3, #1f3f73);
 }
 #header .downloads small{
 	margin-left: 1em;
@@ -271,10 +280,11 @@ img{
 		padding: 0;
 	}
 	#header .button-big{
+		display: block;
 		width: 100%;
 		max-width: 300px;
 		margin: 8px auto;
-		display: block;
+		padding: 0;
 	}
 	#header .buynow{
 		margin-left: auto;
@@ -301,9 +311,9 @@ img{
 <body>
 
 <div id="update-banner">
-	<span class="new-tag">NEW</span>
-	GhostTile 2.0 is here — a full Swift rewrite for modern macOS.
-	<a href="https://ghosttile.hewig.dev/">Check it out &rarr;</a>
+	<span class="new-tag">BETA</span>
+	GhostTile 2.0 is in beta testing — a full Swift rewrite for modern macOS.
+	<a href="https://ghosttile.hewig.dev/">Try the beta &rarr;</a>
 </div>
 
 <div class="row" id="header">
@@ -326,7 +336,7 @@ img{
 			</ul>
 			<h3>Just try GhostTile!</h3>
 			<p>
-				<a class="button-big green" href="https://ghosttile.hewig.dev/">Download 2.0</a>
+				<a class="button-big green" href="https://ghosttile.hewig.dev/">Try 2.0 Beta</a>
 				<a class="button-big blue buynow" href="https://ghosttile.hewig.dev/">Learn More</a>
 			</p>
 		</div>
